@@ -1,0 +1,94 @@
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.glass {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.glass-hover:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.glow-border {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skill-bar { transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.card-tilt { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-tilt:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ripple { position: relative; overflow: hidden; }
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+.btn-ripple:active::after { width: 300px; height: 300px; }
+
+.nav-active { color: #2563eb !important; font-weight: 600 !important; }
+
+.timeline-dot { animation: dotPulse 2s infinite; }
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+}
+
+.profile-ring { animation: ringRotate 12s linear infinite; }
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+::selection { background: rgba(37, 99, 235, 0.15); color: #111827; }
+
+.data-grid {
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.accent-line {
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+}
+
+.tech-tag {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  transition: all 0.2s;
+}
+.tech-tag:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-enter { animation: slideDown 0.3s ease-out; }
+
+.orb {
+  filter: blur(80px);
+  border-radius: 9999px;
+  animation: orbPulse 8s ease-in-out infinite;
+}
+@keyframes orbPulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.1); }
+}
